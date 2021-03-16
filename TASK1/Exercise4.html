@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation of random</title>
+</head>
+<body>
+    <h1>Displaying and addition of two random numbers</h1>
+    <p>it generates numbers from 1 to 10</p>
+    <button onClick="myFunction()">click on me! num1</button>
+    <p id="num1"></p>
+    <button onClick="myFunction()">click on me! num2</button>
+    <p id="num2"></p>
+    <button onClick="myFunction()">click on me! result</button>
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            // var x = Math.floor((Math.random()*10)+1);//it displays from 1 to 10
+            // var y = Math.floor((Math.random()*10)+1);
+            var x = Math.random()*10+1;
+            var y = Math.random()*10+1;
+            document.getElementById("num1").innerHTML=x;
+            document.getElementById("num2").innerHTML=y;
+            document.getElementById("result").innerHTML=x+y;
+        }
+    </script>
+</body>
+</html>

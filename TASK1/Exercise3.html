@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #box1,#box2{
+            background-color: cornflowerblue;
+            padding: 50px;
+            border: 5px solid black;
+        }
+        #p1,#p2{
+            background-color: #fff;
+            font-size: 20px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <h1>Event Delegation example</h1>
+    <p>what is event delegation?</p>
+    <ul type="disc">
+        <li>It is a simple technique by which you add a single event handler to parent element in order to avoid having to add event handlers to multiple children elements</li>
+        <li>in other words , capturing and bubbling allow us to implement one of most powerful event handling patterns</li>
+    </ul>
+    <div id="box1">
+        <h2>Bubbling:</h2>
+        <p>inner most elements event is handled first and then the outermost event is executes</p>
+        <p id="p1">click me!</p>
+    </div>
+    <div id="box2">
+        <h2>Capturing:</h2>
+        <p>outermost event is handled first and then innermost event is handled</p>
+        <p id="p2">Click me!</p>
+    </div>
+    <script>
+        document.getElementById("p1").addEventListener("click", function(){
+            alert("You clicked the white(inner) element!");
+        },false);
+        document.getElementById("box1").addEventListener("click", function(){
+            alert("You clicked the blue(outer) element!");
+        },false);
+        document.getElementById("p2").addEventListener("click", function(){
+            alert("You clicked the white element");
+        },true);
+        document.getElementById("box2").addEventListener("click", function(){
+            alert("You clicked the blue element");
+        },true);
+    </script>
+</body>
+</html>

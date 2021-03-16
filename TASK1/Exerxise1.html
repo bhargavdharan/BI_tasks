@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Numbers</title>
+</head>
+<body>
+    <h1>Adding of two numbers using callback in js</h1>
+    <p id="display">first calculate then display result </p>
+    <script>
+        /*myDisplay is name of my function*/
+        function myDisplay(result){
+            document.getElementById("display").innerHTML = result;
+        }
+        /*myCalculator is argument of my fn */
+        function myCalculator(num1,num2){
+            let sum = num1+num2;
+             myDisplay(sum);
+        }
+        /*the below one is callback of the above function*/
+        myCalculator(5,15,myDisplay);
+    </script>
+</body>
+</html>
