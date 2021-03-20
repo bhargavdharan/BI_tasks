@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            display: inline-block;
+            margin-left  : 50px;
+            background-color: orange;
+            border : 5px solid black;
+            height : 100px;
+        }
+        #submit{
+            text-align: center;
+            margin:50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+</head>
+<body>
+    <h1>Countdown timer by giving user input</h1>
+    <div class="container">
+        <input type="text" id="month" placeholder="Month">
+        <input type="text" id="day"   placeholder="Day">
+        <input type="text" id="year"  placeholder="Year">
+        <input type="text" id="hour"  placeholder="Hour">
+        <input type="text" id="min"   placeholder="Minutes">
+        <input type="text" id="sec"   placeholder="Seconds"></br>
+        <div id="submit">
+            <input type="button" value="Submit" onclick="setTimer();">
+        </div>
+    </div>
+    <p id="display"></p>
+    <script>
+        var timer;
+        function setTimer()
+        {
+            setInterval('setTimer()',1000);
+
+            var timer_month  = document.getElementById("month").value;
+            var timer_day    = document.getElementById("day").value;
+            var timer_year   = document.getElementById("year").value;
+            var timer_hour   = document.getElementById("hour").value;
+            if(timer_hour=="")timer_hour=0;
+            var timer_min    = document.getElementById("min").value;
+            if(timer_min=="")timer_min=0;
+            var timer_sec    = document.getElementById("sec").value;
+            if(timer_sec=="")timer_sec=0;
+
+            var timer_date  = timer_year+ "/" +timer_month+ "/" +timer_day+ "</br>" +timer_hour+ ":" +timer_min+ ":" +timer_sec;
+            //Arrange values in Date time format
+            var end     = new Date(timer_date);
+            //get current date and time
+            var date    = new Date();
+            //total millisecond in one second
+            var second  = 1000;
+            //total sec in one min
+            var minute  = second*60;
+            //total min in one hour
+            var hour    = minute*60;
+            //total hour in one day
+            var day     = hour*24;
+
+            function showTimer(){
+                var date   = new Date();
+                // get the diff b/w current and entered date time
+                var remain = end - date;
+                if(remain<0)
+                {
+                    clearInterval(timer);
+                    document.getElementById("display").innerHTML  = "Reached!";
+                    return;
+                }
+                //get remaining days
+                var days    = Math.floor(remain/day);
+                //get remaining hours
+                var hours   = Math.floor((remain%day)/hour);
+                //get remaining minutes
+                var minutes = Math.floor((remain%hour)/minute);
+                //get remaining seconds
+                var seconds = Math.floor((remain%minute)/second);
+
+                document.getElementById("display").innerHTML    = days   + 'Days';
+                document.getElementById("display").innerHTML   += hours  + 'Hrs';
+                document.getElementById("display").innerHTML   += minutes+ 'Mins';
+                document.getElementById("display").innerHTML   += seconds+ 'Secs';
+            }
+            //display timer for every one second
+            // timer  = setInterval('showTimer()',1000);
+        }
+    </script>
+</body>
+</html>
