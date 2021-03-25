@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin-left:20px;
+            margin-right:20px;
+            margin-top: 50px;
+            padding-top:20px;
+            padding-bottom:25px;
+            text-align: center;
+            background-color: 	#A8A8A8;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+
+        .container{
+            display: relative;
+            background-color:cornflowerblue;
+         
+        }
+        #quoteDisplay{
+            display: inline-block;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:30px;
+            background-color:cadetblue;
+            opacity: 0.7;
+        }
+        #quote{
+            display: inline-block;
+            padding:25px;
+            width: 100px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quote generator</title>
+</head>
+<body>
+    <h1>simple quote generator</h1>
+    <div class="container">
+
+        <!-- <i class="fas fa-quote-left"></i> -->
+        <!-- <i class="fa fa-quote-left fa-3x fa-pull-left fa-border">
+        </i> -->
+                    <div id="quoteDisplay">
+
+                    </div>
+
+        <!-- <i class="fas fa-quote-right"></i> -->
+        <div id="quote">
+            <button onclick="newQuote()">New quote</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
