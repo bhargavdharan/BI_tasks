@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding numbers</title>
+</head>
+
+<body>
+    <h1>Adding two numbers using prototypes in js</h1>
+    <p id="display">first calculate then display</p>
+    <script>
+        function Sum(num1, num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.result = this.num1 + this.num2;
+        }
+        Sum.prototype.sumResult = function () {
+            document.write("The sum of two numbers is " + this.result + "</br>");
+        }
+        let Sum1 = new Sum(25, 25);
+        console.log(Sum1);
+        Sum1.sumResult();
+        document.getElementById('display').innerHTML = " ";
+    </script>
+</body>
+
+</html>
