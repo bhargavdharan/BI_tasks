@@ -1,0 +1,36 @@
+body{
+    text-align: center;
+    margin-right:150px;
+    margin-left:350px;
+    /* margin-right: 250px;
+    margin-left: 600px; */
+}
+.title{
+    background-color: orange;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size:30px;
+    width: 715px;
+    color: black;
+    border: 5px solid black;
+}
+
+input[type='button']
+{
+    background-color: #dfd263;
+    color: black;
+    font-size: 30px;
+    border-bottom: 2px solid black;
+    width: 150px;
+    height:150px;
+}
+
+input[type="text"]
+{
+    background-color:black;
+    color:white;
+    font-size:50px;
+    border: 2px solid black;
+    width : 550px;
+    height : 150px;
+}
